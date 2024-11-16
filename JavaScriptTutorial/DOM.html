@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>YouTube Subscribe button</p>
+    <button onclick = " 
+    const btnEle = document.querySelector('.btn1')
+     if(btnEle.innerHTML === 'Subscribe') {
+        btnEle.innerHTML = 'Subscribed';
+     }
+     else
+     {
+        btnEle.innerHTML = 'Subscribe';
+     }" 
+     class = "btn1">Subscribe</button>
+    <hr>
+    <!-- <button>Hello</button>
+    <button class = "btn" >Hello</button> -->
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Adding shipping fees($10) to the orders under $50</p>
+    <p>Free shipping fees to the orders over $50</p>
+
+    <!-- onkeydown = press any key from keyboard.
+         onclick = click an element to execute js logic. 
+    --> 
+
+    <input class = "cost-input" onkeydown = "
+        handleKey(event);
+    " placeholder = " Cost of the order">
+    <button onclick = "
+        calculateTotal();
+    ">Calculate</button>
+    <p class = 'total-cost'></p>
+
+    <script>
+
+        function handleKey(event){
+            if(event.key === 'Enter')
+                calculateTotal();
+        }
+
+        function calculateTotal(){
+            const inputEle = document.querySelector(`.cost-input`); 
+            let cost = Number(inputEle.value);  
+/*
+    -> We use innerHTML to access the text written between the elements of the html but for 'input' we use .value to access the text instead of the innerHTML.
+    -> Also, this .value property written a string value, therefore we have used a Number function.
+    -> Number() is an built-in function in js which converts the values to the number, provided inside it.
+*/
+
+            if(cost < 50)
+            cost = cost + 10;
+
+            document.querySelector(".total-cost").innerHTML = `$${cost}`;
+
+        }
+
+
+/* 
+    console.log(document.querySelector('button'));
+    console.log(document.querySelector('button').innerHTML);        // This will give the text written inside button
+    document.querySelector('button').innerHTML = "<h5>Start</h5>";
+    const bttn = document.querySelector(".btn");
+    console.log(bttn);
+
+    console.log(document.title);
+    console.log(document.body);
+    console.log(typeof document.body);
+
+    console.log(document.body.innerHTML);
+
+    document.body.innerHTML = '<button>Start</button>';
+    document.title = 'DOM';
+    // document.body.innerHTML = "<h1>HEY EVERYONE</h1>";
+*/
+
+    </script>
+</body>
+</html>

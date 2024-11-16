@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/*
+    Built-in objects 
+    1. console.log()
+    2. Math.random()
+    3. JSON object  -> It is used to convert JS object into JSON and vice versa. It doesn't support functions as well as single qoutes. We can say that it is similar to JS object but with less features.
+    4. localStorage object -> It is used to save values or data permanently.
+        
+*/
+/*
+const score = {
+    cricket : 60,
+    hockey : 50,
+    tennis : 80,
+    fun : function(){
+        console.log("function inside object");
+    }
+}
+ */
+/*
+ const score = JSON.parse(localStorage.getItem('Score'));
+
+// Converting JS object into JSON object
+
+    console.log(JSON.stringify(score));          // stringify method returns a string.
+
+// Converting JSON object into JS object
+
+    let r = JSON.stringify(score);
+    console.log(JSON.parse(r));
+
+// localStorage supports only string values. 
+
+// To save a value in localStorage, use setItem(name, value).    
+localStorage.setItem('Score', JSON.stringify(score));       // since localStorage(lS) supports only strings and JSON.stringify() returns string.
+
+// To get the value from lS we use getItem(name)
+console.log(localStorage.getItem('Score'));     // o/p -> in Json object's form i.e in string(whole object)
+
+// Now to convert this from string to the object, we use JSON.parse()
+console.log(JSON.parse(localStorage.getItem('Score')));     // Instead of making an object of score, we can put <- this line in the 'score' variable. 
+*/
+
+const obj1 = {          // obj1 holds the reference of the object which points to the obj in memory.
+    message : 'hii'
+}
+
+const obj2 = obj1;      // they both points to the same object
+
+const obj3 = {          // obj1 holds the reference of the object which points to the obj in memory.
+    message : 'hii'
+}
+obj1.message = 'Good';
+console.log(obj1);      // Since both are pointing to the same object therefore changes done by one reference will reflect in all.
+console.log(obj2);
+
+console.log(obj1 === obj2); 
+console.log(obj1 === obj3);     // since it compares the references not the object.
+
+// Some shortcuts
+// 1.
+const obj4 = {
+    message : 'hello',
+    price : 564
+};
+
+// const message = obj4.message;
+const {message, price} = obj4;          // Destructing : Easier way to take properties out of an object
+console.log(message, price);
+
+// 2.
+
+const obj5 = {
+   // message : message         // this will prints the value of the message which is stored inside it i.e 'hello'. 
+    message                     // Shorthand Property : when key and value pair names are same.
+};
+console.log(obj5);
+
+// 3.
+
+const obj6 = {
+    // method : function fun(){
+    //     console.log("Method");
+    // }
+
+    method(){                       // Shorthand method
+        console.log("Method");
+    }    
+}
+obj6.method();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+#box{
+    height: 200px;
+    width: 200px;
+    background-color: dodgerblue;
+    color: white;
+    border: 1px solid black;
+}
+.para2{
+    color : white;
+    background-color: darkturquoise;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}

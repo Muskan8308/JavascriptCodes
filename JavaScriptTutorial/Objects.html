@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const pro = {
+            name : "socks",
+            price : 100
+        };
+/*
+        console.log(pro);
+        console.log(pro.name);
+        console.log(pro["price"]);
+
+        pro.name = 'tie';       // Changing name value
+        console.log(pro.name);
+        console.log(pro);
+        pro.color = 'grey';     // Adding new key value pair
+        console.log(pro);
+*/
+
+        const pro2 = {
+            name : "shirt",
+            "large-size" : "XX",
+            rating : {              // Nested Object
+                stars : 4.5,
+                count : 105
+            },
+            fun : function func1()
+            {
+                console.log("Function inside the object");
+            }
+        };
+
+       // console.log(pro2["size"]);  // undefined
+        console.log(pro2);
+        console.log(pro2.rating.stars);
+        pro2.fun();
+
+    </script>
+</body>
+</html>
