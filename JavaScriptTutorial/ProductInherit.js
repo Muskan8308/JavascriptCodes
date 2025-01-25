@@ -5,6 +5,7 @@ class Product {
     image;
     name;
     color;
+    priceCents;
 
     constructor(proDetails)
     {
@@ -12,6 +13,7 @@ class Product {
         this.image = proDetails.image;
         this.name = proDetails.name;
         this.color = proDetails.color;
+        this.priceCents = proDetails.priceCents;
     }
 }
 
@@ -33,5 +35,6 @@ const shirt = new Cloth({
 })
 
 console.log(shirt);
+
 
 
