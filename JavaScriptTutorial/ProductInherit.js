@@ -46,3 +46,34 @@ console.log(date.toLocaleTimeString()); // This will give the current time in h:
 // The dayJs library also uses Date() class in background. And, using dayJs is better than using directly Date() class.
 
 
+// Details about "this"
+
+// 'this' points to its parents object since here is no parent object of following therefore its output will be 'undefined'.
+
+console.log(this);
+
+const obj = {
+    a : 2,
+    b : this.a
+};
+
+function this_log()
+{
+    console.log(this);
+}
+this_log();
+ 
+// We can change the value of 'this' by using call()
+
+this_log.call('Hello this is the changed value of "this" ');
+this_log.call('hello');
+
+// But Arrow function, do not change the value of 'this'
+// 'this' have the same value inside as it has outside the arrow function
+
+const obj2 = {
+    method : () => {
+        console.log(this);
+    }
+}
+obj2.method();
