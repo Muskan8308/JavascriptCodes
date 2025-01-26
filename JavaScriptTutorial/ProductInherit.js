@@ -36,5 +36,13 @@ const shirt = new Cloth({
 
 console.log(shirt);
 
+// Some built-in classes
+
+const date = new Date();        // This will give the current date and time
+console.log(date);
+
+console.log(date.toLocaleTimeString()); // This will give the current time in h:m:s format
+
+// The dayJs library also uses Date() class in background. And, using dayJs is better than using directly Date() class.
 
 
