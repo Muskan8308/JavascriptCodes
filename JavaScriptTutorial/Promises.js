@@ -12,9 +12,15 @@ const promise = createOrder(cart);
 
 console.log(promise);
 
-promise.then(function (orderId) {
+promise
+.then(function (orderId) {          // when code is successful
     console.log(orderId);
-});
+})
+.catch(function (err){              
+    // when code is failed and gives error 
+    // so we handle that error in catch
+    console.log(err.message);
+})
 
 // Producer side
 
@@ -57,5 +63,5 @@ function createOrder(cart)
 
 function validateCart()
 {
-    return true;
+    return false;
 }
