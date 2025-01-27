@@ -3,10 +3,22 @@ const cart = ['shoes', 'socks', 'gloves'];
 /*
   ------  Promise Chaining -------
 
+  1. Promise can be created using new Promise() constructor function which takes a callback function as argument.
+
+  2. There is a '.catch()' which is used to attach a failure callback function that handles any error that pops up during the execution of promise chain.
+
+  3. .catch() only handles the error of .then() that are present above it. If there is any then() below catch(), so it will executed and catch will don't handle the error for that.
+
+  4. We can have multiple catch() based on the requirement and then a general catch() at the end.
+  
+  5. If a then() returns a value, so it will be used as an argument in the next function. 
+
   for eg.
   createOrder -> orderSummary -> proceedToPayment -> updateWallet
 
 */
+
+// Promise chaining
 
 createOrder(cart)
 .then(function (orderId) {
